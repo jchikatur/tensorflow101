@@ -8,6 +8,6 @@ b = tf.Variable(tf.zeros([1]), name='biases')
 
 linear_model = W * x + b
 init = tf.global_variables_initializer()
-session.run(init)
+session.run(init, feed_dict={x: 5})
 
 file_writer = tf.summary.FileWriter('{}/tf.log'.format(os.getcwd()), session.graph)
